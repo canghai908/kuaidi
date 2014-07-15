@@ -1,0 +1,26 @@
+{{template "header"}}
+    	<title>会员管理</title>
+  	</head>
+	
+	<body>
+
+	<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				{{template "navbar" .}}
+			</div>	
+    </div>
+	    <div>
+	    {{if .IsLogin}}
+	    <h4>你的用户名为：{{.Username}}</h4>
+		<h5>你的key为：{{.Key}}</h5>
+        <h5>你的使用次数为{{.Count}}</h5>
+        {{else}}
+        <h6>{{.Err}}</h6>
+        <a href="/login/">登录</a>
+		{{end}}
+	    </div>
+
+        <script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	</body>
+</html>
